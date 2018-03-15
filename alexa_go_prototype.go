@@ -57,12 +57,10 @@ func HandleRequest(ctx context.Context, i AlexaRequest) (AlexaResponse, error) {
 
 	// Customize the response for each Alexa Intent
 	switch i.Request.Intent.Name {
-	case "officetemp":
-		resp.Say("The current temperature is 68 degrees.")
 	case "hello":
-		resp.Say("Hello there, Lambda appears to be working properly.")
+		resp.Say("Hello there.")
 	case "AMAZON.HelpIntent":
-		resp.Say("This app is easy to use, just say: ask the office how warm it is")
+		resp.Say("This app is easy to use, just say: hello")
 	default:
 		resp.Say("I'm sorry, the input does not look like something I understand.")
 	}
